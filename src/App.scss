@@ -1,0 +1,168 @@
+@import "assets/zephyr";
+
+
+
+
+
+/* change the colors */
+$secondary: $white;
+
+
+//$border-color: #262626;
+
+//$dark: #171515;
+//$dark: #211515;
+$dark: #181515;
+$primary: #584cf4;
+
+//$danger: #dd0000;
+//$success: lime;
+//$warning: orange;
+//$info: aqua;
+
+//$body-bg: #04003b;
+$breadcrumb-divider: quote("/");
+$breadcrumb-active-color: $gray-600;
+@import 'bootstrap';
+@import "assets/bootswatch";
+
+.table {
+  background-color: transparent;
+  --bs-table-bg: transparent;
+}
+.form-control-login{
+  background-color: #0000;
+  line-height: 1.5;
+  box-shadow: none;
+color: white;
+
+}
+.form-control-login:disabled{
+  background-color: $gray-300;
+}
+
+.form-control-login:focus{
+  background-color: #0000;
+  color: white;
+}
+
+.common-bg {
+  background-color: $body-bg;
+}
+
+
+
+
+
+
+
+.colorTrans {
+  background-color: rgba(33, 21, 21, 0.9);
+}
+
+.colorThemeTrans {
+  background-color: rgba(88, 76, 244, 0.95);
+}
+
+
+
+
+
+.landingGradient {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0), $body-bg);
+}
+
+
+
+
+.searchBar {
+  background-color: hsla(0, 0%, 100%, 0.2);
+  border-radius: 8px;
+}
+
+.glassEffect {
+  background-image: linear-gradient(125deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2) 70%);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+
+.glassEffect-Dark {
+  background-image: linear-gradient(125deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2) 70%);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+
+.MuiCard-root {
+  background-color: transparent;
+}
+
+.collapse.show {
+  //background-color: $dark;
+  mix-blend-mode: desaturate($primary, 100),
+}
+
+.blendText {
+
+  mix-blend-mode: exclusion;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.loader-container {
+  width: 100%;
+  height: 100%;
+
+  align-items: center;
+  -webkit-align-items: center;
+  top: 40vh;
+  left: 50%;
+  background: linear-gradient(180deg, $dark, $primary);
+
+}
+
+
+.bg-dark-2{
+  background-color: #04003b;
+}
+
+.dropdown-menu-dark {
+  background-color: $dark;
+}
+
+.spinner {
+  width: 64px;
+  height: 64px;
+  border: 8px solid;
+  align-self: center;
+  -webkit-align-self: center;
+  border-color: $secondary transparent $primary transparent;
+  border-radius: 50%;
+  animation: spin-anim 1.2s linear infinite;
+}
+
+.upcomingGradient {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0), $body-bg);
+}
+
+
+
+@keyframes spin-anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
