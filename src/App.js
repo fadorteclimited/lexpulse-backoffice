@@ -21,8 +21,10 @@ const {Header, Footer, Sider, Content} = Layout;
 
 const config = {
     token: {
-        colorPrimary: '#584cf4',
+        colorPrimary: "#584cf4",
+        colorInfo: "#584cf4"
     },
+
 };
 
 
@@ -126,12 +128,15 @@ function Routed() {
             }}
         >
             <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
-                <div className={'ff-montserrat text-white'}><img src={Logo} alt={'logo'} height={'80'}/>Lexpulse
+                <div className={`text-white d-flex flex-row ${(collapsed) ? 'justify-content-around' : ''}`}>
+                    <img src={Logo} alt={'logo'} height={'50'}/>
+                    <h1 className={`ff-montserrat text-uppercase bs-h5 fw-light ${(collapsed)? 'd-none' : ''}`}>Lexpulse</h1>
                 </div>
+
                 <Menu onClick={({key}) => history(key)} id="sidebar" theme="dark"
                       defaultSelectedKeys={location.pathname} mode="inline" items={items}/>
             </Sider>
-            <Layout>
+            <Layout className={'overflow-scroll'}>
                 <Header>
                     <Breadcrumbs alt={true}/>
                 </Header>

@@ -8,7 +8,7 @@ export default function Breadcrumbs({alt = false}) {
     const location = useLocation();
     const pathNames = location.pathname.split("/").filter((x) => x);
     if (alt){
-        return (<div className={'fst-italic text-white text-opacity-50'}>{pathNames.at(pathNames.length - 1)}</div>);
+        return (<div className={'fst-italic fw-light text-capitalize text-white bs-h4 text-opacity-50'}>{pathNames.at(pathNames.length - 1)}</div>);
     } else {
         return (
             <Breadcrumb>
