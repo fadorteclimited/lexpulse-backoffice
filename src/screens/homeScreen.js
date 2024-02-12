@@ -1,15 +1,12 @@
-import {Card, Col, Row, Space, Statistic, Table, theme, Typography} from "antd";
+import {Card, Col, Row, Statistic, Table, Typography} from "antd";
 import React from "react";
 import CountUp from 'react-countup';
 import {getRandomInt} from "../podo/utils";
 import {Line} from "@ant-design/charts";
-import {MoneyCollectOutlined} from "@ant-design/icons";
-import {AiOutlineMoneyCollect} from "react-icons/ai";
-import {faker} from "@faker-js/faker";
 
 
 const formatter = (value) => <CountUp end={value} separator=","/>;
-const {Title, Text, Link} = Typography;
+const {Text} = Typography;
 
 function HomeScreenStat({title, value, precision, percentage, positive = true}) {
 
@@ -53,10 +50,6 @@ export default function HomeScreen() {
             xs: 8, sm: 16, md: 24, lg: 32,
         }}>
             <Col span={16}>
-                <Card>
-                    <h2>Tickets Sold</h2>
-                    <Line className={'ar-chart'} {...props}/>
-                </Card>
 
                 <Card className={'mt-3 overflow-hidden'}>
                     <h2>New Events</h2>

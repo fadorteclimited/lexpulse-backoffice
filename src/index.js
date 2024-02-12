@@ -3,19 +3,17 @@ import ReactDOM from 'react-dom/client';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {DevSupport} from "@react-buddy/ide-toolbox";
-import {ComponentPreviews, useInitial} from "./dev";
+import {Analytics} from "@vercel/analytics/react";
+import {Provider} from "react-redux";
+import {store} from "./store";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-    <React.StrictMode>
-        <DevSupport ComponentPreviews={ComponentPreviews}
-                    useInitialHook={useInitial}
-        >
-            <App/>
-        </DevSupport>
-    </React.StrictMode>
-);
+root.render(<React.StrictMode>
+    <Provider store={store}>
+    <App/>
+    <Analytics />
+</Provider>
+</React.StrictMode>);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

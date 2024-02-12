@@ -8,12 +8,14 @@ import React, {useEffect, useState} from "react";
 import Support from "./screens/support";
 import Hosts from "./screens/Hosts";
 import Clients from "./screens/clients";
-import {ConfigProvider, Breadcrumb, Layout, Menu, theme} from "antd";
+import {ConfigProvider, Layout, Menu, theme} from "antd";
 import {
-    DesktopOutlined, FileOutlined, MenuOutlined, PieChartOutlined, TeamOutlined, UserOutlined,
+    FileOutlined, MenuOutlined, PieChartOutlined, TeamOutlined, UserOutlined,
 } from '@ant-design/icons';
 import Logo from "./assets/logo.png";
 import Breadcrumbs from "./components/breadcrumbs";
+import SingleClient from "./screens/clients/single";
+import SingleHost from "./screens/hosts/single";
 
 
 const {Header, Footer, Sider, Content} = Layout;
@@ -148,7 +150,9 @@ function Routed() {
                         <Routes>
                             <Route path={'/'} element={<HomeScreen/>}/>
                             <Route path={'/hosts'} element={<Hosts/>}/>
+                            <Route path={'/hosts/:id'} element={<SingleHost/>}/>
                             <Route path={'/clients'} element={<Clients/>}/>
+                            <Route path={'/clients/:id'} element={<SingleClient/>}/>
                             <Route path={'/support'} element={<Support/>}/>
                         </Routes>
                     </div>

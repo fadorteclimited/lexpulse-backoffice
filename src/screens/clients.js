@@ -4,8 +4,7 @@ import {useEffect, useRef, useState} from "react";
 import {dateReader} from "../podo/utils";
 import {SearchOutlined} from "@ant-design/icons";
 import Highlighter from 'react-highlight-words';
-
-
+import {Link} from "react-router-dom";
 
 
 export default function Clients() {
@@ -162,11 +161,7 @@ export default function Clients() {
 
                 ...getColumnSearchProps('phone')
             },
-            {
-                title: 'Date Of Birth', dataIndex: 'dob',
-                responsive: ['md'],
-                render: dob => dateReader({date: dob})
-            },
+
             {
                 title: 'Status', dataIndex: 'status',
                 render: (status) => {
@@ -183,7 +178,11 @@ export default function Clients() {
                 onFilter: (value, record) => record.status.indexOf(value) === 0,
                 sorter: (a, b) => a.status.length - b.status.length,
                 sortDirections: ['descend', 'ascend'],
-            }
+            },
+            {
+                title: 'Action', dataIndex: 'id',
+                render: id => <Link to={`/clients/${id}`}><Button>view</Button></Link>
+            },
         ];
     }
     return (<div className={''}>
