@@ -1,3 +1,6 @@
+import {useState} from "react";
+import {faker} from "@faker-js/faker";
+import {Avatar, Space} from "antd";
 
 export function getRandomInt(max, min = 0) {
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -58,3 +61,12 @@ export const dateReader = ({date, month = true, years = true, weekDay = false}) 
     return dateString;
 }
 
+export function MiniUserModule({id}){
+    const [user, setUser] = useState({
+        id: id,
+        firstName: faker.person.firstName(),
+        lastName: faker.person.lastName(),
+        image: faker.image.avatar(),
+    })
+    return (<Space><Avatar src={user.image}/>{user.firstName} {user.lastName}</Space>)
+}

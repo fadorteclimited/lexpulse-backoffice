@@ -1,7 +1,6 @@
 import {Button, Input, Space, Table, Tag} from "antd";
-import {getClients, userStatus} from "../podo/userData";
+import {getClients, userStatus} from "../../podo/userData";
 import {useEffect, useRef, useState} from "react";
-import {dateReader} from "../podo/utils";
 import {SearchOutlined} from "@ant-design/icons";
 import Highlighter from 'react-highlight-words';
 import {Link} from "react-router-dom";

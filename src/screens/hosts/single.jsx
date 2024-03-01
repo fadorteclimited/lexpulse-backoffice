@@ -5,7 +5,7 @@ import {faker} from "@faker-js/faker";
 import DescriptionsItem from "antd/es/descriptions/Item";
 import eventList from '../../podo/events.json'
 import Poster from "../../components/poster";
-import {EllipsisOutlined} from "@ant-design/icons";
+import {DownOutlined, EllipsisOutlined} from "@ant-design/icons";
 
 export default function SingleHost() {
     const [profile,setProfile] = useState({
@@ -46,17 +46,25 @@ export default function SingleHost() {
                 label: 'Delete User'
             }
         ];
+
     return (<div className={'py-3'}>
         <Card>
             <Row gutter={[16,8]}>
                 <Col span={6} ><Image src={profile.image} width={'100%'} className={'ar-square rounded-3 px-2'}/></Col>
                 <Col span={18} >
-                    <Descriptions title={'Client information'} layout={'vertical'} colon={false} extra={<Dropdown menu={{
+                    <Descriptions title={'Client information'} layout={'vertical'} colon={false} extra={<Dropdown placement="bottom" menu={{
                         items: dropdownItems,
                         onClick: dropDownOnClick,
                     }} arrow={{
                         pointAtCenter: true,
-                    }}><EllipsisOutlined/></Dropdown>}>
+                    }}>
+                        <Button type={'link'}>
+                            <Space>
+                                Actions
+                                <DownOutlined />
+                            </Space>
+                        </Button>
+                        </Dropdown>}>
                         <DescriptionsItem label={'Name'}>{profile.firstName} {profile.lastName}</DescriptionsItem>
                         <DescriptionsItem label={'Company Name'}>{profile.companyName}</DescriptionsItem>
                         <DescriptionsItem label={'Email'}>{profile.email} <Tag className={'ms-2 '} color={(profile.verified)? 'success' : 'warning'}>{(profile.verified)? 'Verified' : 'Unverified'}</Tag></DescriptionsItem>
